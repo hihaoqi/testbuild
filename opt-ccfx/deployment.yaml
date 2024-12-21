@@ -20,11 +20,10 @@ spec:
         fsGroup: 1000
       containers:
       - name: octopus-ccfx
-        image: registry.cn-shanghai.aliyuncs.com/k8shao/octopus:2.0.14
+        image: registry.cn-shanghai.aliyuncs.com/k8shao/nginx:1.27-alpine
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8000
-        - containerPort: 20790
+        - containerPort: 80
         securityContext:
           allowPrivilegeEscalation: false
         resources:

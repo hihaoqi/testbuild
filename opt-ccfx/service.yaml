@@ -10,11 +10,7 @@ spec:
   selector:
     app: octopus-ccfx
   ports:
-  - port: 8000
-    targetPort: 8000
+  - port: 80
+    targetPort: 80
     nodePort: 30800
     name: tcp
-  - port: 20790
-    targetPort: 20790
-    nodePort: 30790
-    name: socket
