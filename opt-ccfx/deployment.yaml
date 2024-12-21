@@ -20,7 +20,7 @@ spec:
         fsGroup: 1000
       containers:
       - name: octopus-ccfx
-        image: registry.cn-shanghai.aliyuncs.com/k8shao/nginx:1.27-alpine
+        image: nginx:1.27-alpine
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
@@ -37,5 +37,3 @@ spec:
       - name: octopus-logs
         emptyDir: {}
       restartPolicy: Always
-      imagePullSecrets:
-      - name: midas-acr
