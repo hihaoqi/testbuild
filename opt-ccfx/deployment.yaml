@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: octopus-ccfx
+  namespace: octopus
+  labels:
+    app: octopus-ccfx
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: octopus-ccfx
+  template:
+    metadata:
+      labels:
+        app: octopus-ccfx
+    spec:
+      containers:
+      - name: octopus-ccfx
+        image: registry.cn-shanghai.aliyuncs.com/k8shao/octopus:2.0.14
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        - containerPort: 20790
+        securityContext:
+          allowPrivilegeEscalation: false
+        resources:
+          limits:
+            cpu: "0.8"
+            memory: "800Mi"
+        volumeMounts:
+        - name: octopus-logs
+          mountPath: /tmp/octopus
+      volumes:
+      - name: octopus-logs
+        emptyDir: {}
+      restartPolicy: Always
+      imagePullSecrets:
+      - name: midas-acr
