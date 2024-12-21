@@ -20,7 +20,7 @@ spec:
         fsGroup: 1000
       containers:
       - name: octopus-ccfx
-        image: nginx:1.27-alpine
+        image: docker.m.daocloud.io/nginx:1.27-alpine
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
