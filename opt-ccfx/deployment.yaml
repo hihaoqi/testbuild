@@ -16,6 +16,8 @@ spec:
       labels:
         app: octopus-ccfx
     spec:
+      securityContext:
+        fsGroup: 1000
       containers:
       - name: octopus-ccfx
         image: registry.cn-shanghai.aliyuncs.com/k8shao/octopus:2.0.14
