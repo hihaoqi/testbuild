@@ -27,8 +27,8 @@ spec:
           allowPrivilegeEscalation: false
         resources:
           limits:
-            cpu: "0.8"
-            memory: "800Mi"
+            cpu: "500m"
+            memory: "500Mi"
         volumeMounts:
         - name: octopus-logs
           mountPath: /tmp/octopus
