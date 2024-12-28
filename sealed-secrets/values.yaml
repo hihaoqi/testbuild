@@ -37,7 +37,7 @@ commonLabels: {}
 ## @param image.pullSecrets [array]  Sealed Secrets image pull secrets
 ##
 image:
-  registry: docker.io
+  registry: docker.m.daocloud.io
   repository: bitnami/sealed-secrets-controller
   tag: 0.27.3
   ## Specify a imagePullPolicy
