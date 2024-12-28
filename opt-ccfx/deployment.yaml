@@ -20,11 +20,11 @@ spec:
         fsGroup: 1000
       containers:
       - name: octopus-ccfx
-        #image: docker.m.daocloud.io/nginx:1.27-alpine
-        image: docker.m.daocloud.io/nginx:1.26.2-alpine
+        image: registry.cn-shanghai.aliyuncs.com/k8shao/octopus:2.0.7 
+        #image: docker.m.daocloud.io/nginx:1.26.2-alpine
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: 8000
         securityContext:
           allowPrivilegeEscalation: false
         resources:
@@ -38,3 +38,5 @@ spec:
       - name: octopus-logs
         emptyDir: {}
       restartPolicy: Always
+      imagePullSecrets:
+      - name: acr-repo
